@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Mr. Kashyap 💖</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(to bottom, #ffe6e6, #fff5cc);
+        text-align: center;
+        overflow-x: hidden;
+        min-height: 100vh;
+        position: relative;
+    }
+    header {
+        padding: 20px;
+        font-size: 2em;
+        font-weight: bold;
+        color: #d6336c;
+        animation: fadeIn 2s ease-in-out;
+    }
+    .message {
+        font-size: 1.3em;
+        margin: 20px auto;
+        color: #444;
+        max-width: 600px;
+        animation: fadeIn 2s ease-in-out;
+    }
+    .promise {
+        display: inline-block;
+        background: #fff;
+        border-radius: 25px;
+        padding: 10px 20px;
+        margin: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        font-weight: bold;
+        color: #d6336c;
+        animation: fadeUp 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+    @keyframes fadeUp {
+        from {opacity: 0; transform: translateY(20px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+    .heart {
+        position: absolute;
+        color: #ff4d88;
+        animation: floatUp 6s linear infinite;
+    }
+    @keyframes floatUp {
+        0% {transform: translateY(0); opacity: 1;}
+        100% {transform: translateY(-800px); opacity: 0;}
+    }
+    button {
+        background: #ff4d88;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-size: 1em;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: background 0.3s;
+    }
+    button:hover {
+        background: #d6336c;
+    }
+    .love-letter {
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        margin: 30px auto;
+        max-width: 700px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        font-style: italic;
+        line-height: 1.6em;
+        animation: fadeIn 2s ease-in-out;
+        position: relative;
+    }
+    /* Heart-shaped photo inside love letter */
+    .letter-photo {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 15px;
+        background: url('image.png') no-repeat center/cover;
+        clip-path: polygon(50% 0%, 61% 12%, 75% 12%, 88% 25%, 88% 43%, 50% 100%, 12% 43%, 12% 25%, 25% 12%, 39% 12%);
+        border: 4px solid #ff4d88;
+        box-shadow: 0 0 15px rgba(255, 77, 136, 0.8);
+        animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+        from { box-shadow: 0 0 10px rgba(255, 77, 136, 0.6); }
+        to { box-shadow: 0 0 20px rgba(255, 77, 136, 1); }
+    }
+</style>
+</head>
+<body>
+
+<header>💖 For My Forever, Mr. Kashyap 💖</header>
+
+<div class="message" id="mainMessage">
+    You are my sunshine, my safe place, my always.  
+</div>
+
+<div id="promises">
+    <div class="promise">I promise to be with you always 🤝</div>
+    <div class="promise">I promise to make you smile 😄</div>
+    <div class="promise">I promise to never let you feel alone 🌙</div>
+    <div class="promise">I promise to love you in every lifetime ❤️</div>
+</div>
+
+<div class="love-letter">
+    <div class="letter-photo"></div>
+    Dear Mr. Kashyap,  
+    No matter how dark the night, I will be your moonlight.  
+    No matter how heavy the storm, I will be your shelter.  
+    I promise to stand beside you in every fight,  
+    to hold your hand through every fear,  
+    to celebrate every joy,  
+    and to love you more each passing day.  
+    You are not just my love, you are my home. 💕  
+    <br><br> — Yours, Always & Forever.
+</div>
+
+<button onclick="showNewMessage()">💌 Click for More Love</button>
+
+<script>
+const messages = [
+    "You are stronger than you think, Mr. Kashyap 💪",
+    "Every day with you is my favorite day 🌸",
+    "Even the clouds envy your charm ☁️",
+    "My heart beats in rhythm with yours 💓",
+    "You make the world a better place 🌏",
+    "Your smile is my favorite sunrise 🌅",
+    "I fall in love with you over and over again ❤️"
+];
+
+function showNewMessage() {
+    const msg = document.getElementById("mainMessage");
+    msg.textContent = messages[Math.floor(Math.random() * messages.length)];
+    createHeart();
+}
+
+// Floating heart emoji
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.top = window.innerHeight + "px";
+    heart.textContent = "💖";
+    heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 6000);
+}
+
+// Auto floating hearts
+setInterval(createHeart, 800);
+
+// Auto change messages every 4 seconds
+setInterval(() => showNewMessage(), 4000);
+</script>
+
+</body>
+</html>
